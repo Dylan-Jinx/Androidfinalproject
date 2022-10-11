@@ -19,3 +19,57 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#retrofit2 混淆
+
+-dontwarn javax.annotation.**
+
+-dontwarn javax.inject.**
+
+# OkHttp3
+
+-dontwarn okhttp3.logging.**
+
+-keep class okhttp3.internal.*{*;}
+
+-dontwarn okio.**
+
+# Retrofit
+
+-dontwarn retrofit2.**
+
+-keep class retrofit2.* { *; }
+
+-keepattributesSignature
+
+-keepattributes Exceptions
+
+# Gson
+
+-keepattributes EnclosingMethod
+
+-keep class com.dh.notice.net.*{*;}# 自定义数据模型的bean目录
+
+# RxJava RxAndroid
+
+#-dontwarn sun.misc.**
+
+#-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+
+#    long producerIndex;
+
+#    long consumerIndex;
+
+#}
+
+#-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+
+#    rx.internal.util.atomic.LinkedQueueNode producerNode;
+
+#}
+
+#-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
+
+#    rx.internal.util.atomic.LinkedQueueNode consumerNode;
+
+#}
