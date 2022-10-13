@@ -1,8 +1,11 @@
 package com.demo.jinx.finalproject.bean;
 
+
+import com.chad.library.adapter.base.entity.MultiItemEntity;
+
 import java.io.Serializable;
 
-public class NewsBean implements Serializable {
+public class NewsBean implements Serializable, MultiItemEntity {
 	private String newsTypeName;
 	private String img3;
 	private String newsUrl;
@@ -90,4 +93,9 @@ public class NewsBean implements Serializable {
 			",img1 = '" + img1 + '\'' + 
 			"}";
 		}
+
+	@Override
+	public int getItemType() {
+		return getType();
+	}
 }
