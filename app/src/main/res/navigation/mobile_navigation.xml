@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/meFragment">
+    app:startDestination="@id/navigation_home">
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_home"
         android:name="com.demo.jinx.finalproject.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
@@ -21,7 +21,7 @@
 
     </fragment>
     <fragment
-        android:id="@+id/chartFragment"
+        android:id="@+id/navigation_chart"
         android:name="com.demo.jinx.finalproject.ui.chart.ChartFragment"
         android:label="图表"
         tools:layout="@layout/fragment_chart">
@@ -36,7 +36,7 @@
 
     </fragment>
     <fragment
-        android:id="@+id/videoFragment"
+        android:id="@+id/navigation_video"
         android:name="com.demo.jinx.finalproject.ui.video.VideoFragment"
         android:label="fragment_video"
         tools:layout="@layout/fragment_video" >
@@ -45,7 +45,7 @@
             app:destination="@id/videoDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/meFragment"
+        android:id="@+id/navigation_me"
         android:name="com.demo.jinx.finalproject.ui.me.MeFragment"
         android:label="fragment_me"
         tools:layout="@layout/fragment_me" >
