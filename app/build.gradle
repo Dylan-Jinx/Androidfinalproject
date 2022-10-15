@@ -64,6 +64,9 @@ dependencies {
     implementation 'com.github.Justson.AgentWeb:agentweb-filechooser:v5.0.6-androidx' // (可选)
     implementation 'com.github.Justson:Downloader:v5.0.4-androidx'
 
+    implementation 'com.nightonke:boommenu:2.1.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

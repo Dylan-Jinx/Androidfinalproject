@@ -23,8 +23,18 @@
     <fragment
         android:id="@+id/chartFragment"
         android:name="com.demo.jinx.finalproject.ui.chart.ChartFragment"
-        android:label="fragment_chart"
-        tools:layout="@layout/fragment_chart" />
+        android:label="图表"
+        tools:layout="@layout/fragment_chart">
+
+        <action
+            android:id="@+id/action_navigation_chart_to_lineFragment"
+            app:destination="@id/lineFragment" />
+        <action android:id="@+id/action_navigation_chart_to_barFragment"
+            app:destination="@id/barFragment" />
+        <action android:id="@+id/action_navigation_chart_to_pieFragment"
+            app:destination="@id/pieFragment" />
+
+    </fragment>
     <fragment
         android:id="@+id/videoFragment"
         android:name="com.demo.jinx.finalproject.ui.video.VideoFragment"
@@ -51,4 +61,19 @@
             app:argType="string"
             android:defaultValue="http://www.baidu.com" />
     </fragment>
+    <fragment
+        android:id="@+id/barFragment"
+        android:name="com.demo.jinx.finalproject.ui.chart.bar.BarFragment"
+        android:label="fragment_bar"
+        tools:layout="@layout/fragment_bar" />
+    <fragment
+        android:id="@+id/lineFragment"
+        android:name="com.demo.jinx.finalproject.ui.chart.line.LineFragment"
+        android:label="fragment_line"
+        tools:layout="@layout/fragment_line" />
+    <fragment
+        android:id="@+id/pieFragment"
+        android:name="com.demo.jinx.finalproject.ui.chart.pie.PieFragment"
+        android:label="fragment_pie"
+        tools:layout="@layout/fragment_pie" />
 </navigation>
