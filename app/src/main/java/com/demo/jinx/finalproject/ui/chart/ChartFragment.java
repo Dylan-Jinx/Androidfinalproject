@@ -13,11 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.demo.jinx.finalproject.R;
+import com.demo.jinx.finalproject.base.BaseFragment2;
 import com.demo.jinx.finalproject.bean.BoomMenuItemBean;
 import com.nightonke.boommenu.BoomButtons.TextInsideCircleButton;
 import com.nightonke.boommenu.BoomMenuButton;
 
-public class ChartFragment extends Fragment {
+public class ChartFragment extends BaseFragment2 {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -36,12 +36,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home,R.id.navigation_chart,R.id.navigation_video,
-                R.id.navigation_me
-        ).build();
-        navController = Navigation.findNavController(this,R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this,navController,appBarConfiguration);
-        NavigationUI.setupWithNavController(navView,navController);
+                R.id.navigation_home, R.id.navigation_chart, R.id.navigation_video,
+                R.id.navigation_me).build();
+        navController = Navigation.findNavController(this,
+                R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController,
+                appBarConfiguration);
+        NavigationUI.setupWithNavController(navView, navController);
         NavigationUI.navigateUp(navController, appBarConfiguration);
     }
 

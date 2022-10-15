@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/videoFragment">
+    app:startDestination="@id/meFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.demo.jinx.finalproject.ui.home.HomeFragment"
@@ -48,7 +48,14 @@
         android:id="@+id/meFragment"
         android:name="com.demo.jinx.finalproject.ui.me.MeFragment"
         android:label="fragment_me"
-        tools:layout="@layout/fragment_me" />
+        tools:layout="@layout/fragment_me" >
+        <action
+            android:id="@+id/action_meFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
+            android:id="@+id/action_meFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/pythonFragment"
         android:name="com.demo.jinx.finalproject.ui.home.python.PythonFragment"
@@ -97,4 +104,29 @@
             android:name="list"
             app:argType="string[]" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.demo.jinx.finalproject.ui.me.user.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_findPasswordFragment"
+            app:destination="@id/findPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findPasswordFragment"
+        android:name="com.demo.jinx.finalproject.ui.me.user.FindPasswordFragment"
+        android:label="FindPasswordFragment" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.demo.jinx.finalproject.ui.me.user.InfoFragment"
+        android:label="InfoFragment" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.demo.jinx.finalproject.ui.me.user.RegisterFragment"
+        android:label="RegisterFragment" />
 </navigation>
