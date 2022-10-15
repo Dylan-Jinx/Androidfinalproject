@@ -5,10 +5,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,7 +46,7 @@ public class HomeFragment extends Fragment {
         View headerView = inflater.inflate(R.layout.head_home, container, false);
         homeAdapter.setHeaderView(headerView);
         homeAdapter.setHeaderWithEmptyEnable(true);
-        banner =  headerView.findViewById(R.id.banner);
+        banner = headerView.findViewById(R.id.banner);
         banner.addBannerLifecycleObserver(this)//添加生命周期观察者
                 .setPageTransformer(new ZoomOutPageTransformer())
                 .start();
@@ -63,6 +65,18 @@ public class HomeFragment extends Fragment {
             layout.finishLoadMore(2000/*,false*/);//传入false表示加载失败
             Toast.makeText(getActivity(), "没有更多数据了", Toast.LENGTH_SHORT).show();
         });
+        /** 测试的时候注释
+        getAdList();
+        getNewsList();
+        **/
+        LinearLayout linearLayout_python = headerView.findViewById(R.id.linearLayout_python);
+        linearLayout_python.setOnClickListener(v-> Navigation.findNavController(v)
+                .navigate(R.id.action_navigation_home_to_pythonFragment));
+        homeAdapter.setOnItemChildClickListener(((adapter, view, position) -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("url",homeAdapter.getData().get(position).getNewsUrl());
+            Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_webFragment);
+        }));
         return root;
     }
 
@@ -74,6 +88,11 @@ public class HomeFragment extends Fragment {
 //                Log.i("AD:", newsBean.getNewsName());
 //            }
                 banner.setAdapter(new ImageTitleNumAdapter(newsBeans));
+                banner.setOnBannerListener(((data, position) -> {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("url",homeAdapter.getData().get(position).getNewsUrl());
+                    Navigation.findNavController(banner).navigate(R.id.action_navigation_home_to_webFragment,bundle);
+                }));
             });
         }catch (Exception e){
             Log.i("test", "interrupt");
