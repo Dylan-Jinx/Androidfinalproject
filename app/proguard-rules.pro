@@ -49,7 +49,10 @@
 -keepattributes EnclosingMethod
 
 -keep class com.dh.notice.net.*{*;}# 自定义数据模型的bean目录
-
+-keep class com.baidu.** {*;}
+-keep class vi.com.** {*;}
+-keep class com.baidu.vi.** {*;}
+-dontwarn com.baidu.**
 # RxJava RxAndroid
 
 #-dontwarn sun.misc.**

@@ -10,6 +10,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.demo.jinx.finalproject.R;
@@ -29,6 +30,10 @@ public class MeFragment extends Fragment {
         circleImageView.setOnClickListener(this::click);
         TextView textView = root.findViewById(R.id.textView);
         textView.setOnClickListener(this::click);
+        LinearLayout linearLayoutMap = root.findViewById(R.id.linearLayout_map);
+        linearLayoutMap.setOnClickListener(v->Navigation.findNavController(v).navigate(R.id.action_navigation_me_to_mapFragment));
+
+        //TODO: check loginStatus
 //        if(BombUser.isLogin()){
 //            User user  = BombUser.getCurrentUser(User.class);
 //            textView.setText(user.getUsername());

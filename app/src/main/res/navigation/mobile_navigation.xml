@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_meFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_navigation_me_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/pythonFragment"
@@ -129,4 +132,9 @@
         android:id="@+id/registerFragment"
         android:name="com.demo.jinx.finalproject.ui.me.user.RegisterFragment"
         android:label="RegisterFragment" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.demo.jinx.finalproject.ui.me.map.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 </navigation>
